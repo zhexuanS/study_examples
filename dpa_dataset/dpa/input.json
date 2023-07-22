@@ -1,0 +1,91 @@
+{
+    "model": {
+        "descriptor": {
+            "type": "se_atten",
+            "sel": 60,
+            "rcut_smth": 0.5,
+            "rcut": 6.0,
+            "neuron": [
+                25,
+                50,
+                100
+            ],
+            "resnet_dt": false,
+            "axis_neuron": 16,
+            "attn": 128,
+            "attn_layer": 2,
+            "attn_dotr": true,
+            "attn_mask": false,
+            "seed": 1801819940,
+            "_activation_function": "tanh"
+        },
+        "fitting_net": {
+            "neuron": [
+                240,
+                240,
+                240
+            ],
+            "resnet_dt": true,
+            "_coord_norm": true,
+            "_type_fitting_net": false,
+            "seed": 2375417769,
+            "_activation_function": "tanh"
+        },
+        "type_map": [
+            "Li",
+            "Ge",
+            "P",
+            "S"
+        ]
+    },
+    "learning_rate": {
+        "type": "exp",
+        "start_lr": 0.001,
+        "decay_steps": 50,
+        "stop_lr": 3.51e-08
+    },
+    "loss": {
+        "start_pref_e": 0.02,
+        "limit_pref_e": 1,
+        "start_pref_f": 1000,
+        "limit_pref_f": 1,
+        "start_pref_v": 0,
+        "limit_pref_v": 0
+    },
+    "training": {
+        "training_data": {
+            "systems": [
+		"iter.000000/02.fp/data.000",
+                "iter.000000/02.fp/data.001",
+                "iter.000000/02.fp/data.002",
+                "iter.000000/02.fp/data.003"
+            ],
+            "batch_size": 1
+        },
+        "validation_data": {
+            "systems": [
+                "iter.000001/02.fp/data.000",
+                "iter.000001/02.fp/data.001",
+                "iter.000001/02.fp/data.002",
+                "iter.000001/02.fp/data.003",
+                "iter.000002/02.fp/data.000",
+                "iter.000002/02.fp/data.001",
+                "iter.000002/02.fp/data.002",
+                "iter.000002/02.fp/data.003"
+                ],
+            "batch_size": 1
+        },
+        "numb_steps": 10000,
+        "seed": 3982377700,
+        "_comment": "that's all",
+        "disp_file": "lcurve.out",
+        "disp_freq": 100,
+        "numb_test": 1,
+        "save_freq": 2000,
+        "save_ckpt": "model.ckpt",
+        "disp_training": true,
+        "time_training": true,
+        "profiling": false,
+        "profiling_file": "timeline.json"
+    }
+}
